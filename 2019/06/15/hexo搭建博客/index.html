@@ -132,7 +132,7 @@
 <meta property="og:description" content="现在搭建博客是越来越方便了，一直想找个快速搭建博客的工具。现在记录一下hexo的使用和踩过的一些坑。希望对新手有所帮助。 一、搭建之前的环境准备（一）安装 Git官网下载 git 安装包，然后进行安装。 git bash 是一个命令行工具，用来操作和仓库有关的行为。 1 SSH 连接远程库 当前前提是需要拥有 github 的账号  1）注册github账户具体步骤很简单，不会可百度 2）创建 g">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/contact-bg,jpg">
-<meta property="og:updated_time" content="2019-07-04T07:20:15.284Z">
+<meta property="og:updated_time" content="2019-07-04T07:29:33.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客">
 <meta name="twitter:description" content="现在搭建博客是越来越方便了，一直想找个快速搭建博客的工具。现在记录一下hexo的使用和踩过的一些坑。希望对新手有所帮助。 一、搭建之前的环境准备（一）安装 Git官网下载 git 安装包，然后进行安装。 git bash 是一个命令行工具，用来操作和仓库有关的行为。 1 SSH 连接远程库 当前前提是需要拥有 github 的账号  1）注册github账户具体步骤很简单，不会可百度 2）创建 g">
@@ -497,7 +497,8 @@
 </ul>
 <h3 id="6-部署网站"><a href="#6-部署网站" class="headerlink" title="6 部署网站"></a>6 部署网站</h3><p><code>hexo d</code>一键部署。</p>
 <blockquote>
-<p>如果不是用<code>hexo-cli</code>的话，这一步还需要安装 <code>npm i -S hexo-deployer-git</code>，用于发布博客到 git 的 Npm 包</p>
+<p>如果不是用<code>hexo-cli</code>的话，这一步还需要安装 <code>npm i -S hexo-deployer-git</code>，用于发布博客到 git 的 Npm 包。</p>
+<p>若报错没有找到 git ，也是因为没有安装这个依赖。</p>
 </blockquote>
 <p>执行这个命令后，会让你登录 <code>github</code></p>
 <h3 id="7-清除缓存和静态文件"><a href="#7-清除缓存和静态文件" class="headerlink" title="7 清除缓存和静态文件"></a>7 清除缓存和静态文件</h3><p><code>hexo clean</code>，有时候更换主题没有变化，就需要清理缓存文件 db.json 和静态文件 public</p>
@@ -585,6 +586,7 @@
 
 <p>然后自定义配置文件等等。</p>
 <h3 id="3-推荐主题-NexT"><a href="#3-推荐主题-NexT" class="headerlink" title="3 推荐主题 NexT"></a>3 推荐主题 NexT</h3><p><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html</a></p>
+<p>有中文文档，也是目前 star 最多的主题。</p>
 <h2 id="（三）利用-Github-搭建图床"><a href="#（三）利用-Github-搭建图床" class="headerlink" title="（三）利用 Github 搭建图床"></a>（三）利用 Github 搭建图床</h2><p>在自己的博客git上创建一个个 <code>issues</code>，然后直接把图片拉进去就完事了。</p>
 <p>然后找到该图片的 URL 地址，最后在自己的博客里用</p>
 
