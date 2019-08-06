@@ -325,7 +325,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/05/requirejs 配置/" itemprop="url">配置</a></h1>
+                <a class="post-title-link" href="/2019/08/05/requirejs 配置/" itemprop="url">RequireJS 基本配置</a></h1>
         
 
         <div class="post-meta">
@@ -757,7 +757,7 @@
 </ol>
 <h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><p><code>hexo g</code>，还有两种选择</p>
 <ul>
-<li>hexo g - d， 生成文件后立即部署网站（写完文档，拷贝到目标目录后，偷懒就直接执行这个）</li>
+<li>hexo g - d， 生成文件后立即部署网站</li>
 <li>hexo g -w，监视文件变动</li>
 </ul>
 <h3 id="生成草稿"><a href="#生成草稿" class="headerlink" title="生成草稿"></a>生成草稿</h3><blockquote>
@@ -780,7 +780,19 @@
 </blockquote>
 <p>执行这个命令后，会让你登录 <code>github</code></p>
 <h3 id="清除缓存和静态文件"><a href="#清除缓存和静态文件" class="headerlink" title="清除缓存和静态文件"></a>清除缓存和静态文件</h3><p><code>hexo clean</code>，有时候更换主题没有变化，就需要清理缓存文件 db.json 和静态文件 public</p>
-<h2 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h2><h3 id="创建文章文件"><a href="#创建文章文件" class="headerlink" title="创建文章文件"></a>创建文章文件</h3><p><code>hexo new 布局(默认 post) xxx</code>，会出现在 <code>source/_posts</code>，平时写作也就关心这个文件夹就行了。</p>
+<h2 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h2><h3 id="实际写作时的步骤"><a href="#实际写作时的步骤" class="headerlink" title="实际写作时的步骤"></a>实际写作时的步骤</h3><ul>
+<li><code>hexo new post xxxx</code>创建有基本信息填充的md文件</li>
+<li>复制自己写好的 md 内容，然后根据需要修改头部文章基本信息</li>
+<li><code>hexo g -d</code>生成静态文件后直接部署</li>
+<li>也可以本地调试<ul>
+<li><code>hexo g</code>生成静态文件</li>
+<li><code>hexo server</code>本地测试</li>
+<li><code>hexo d</code>发布部署</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建文章文件"><a href="#创建文章文件" class="headerlink" title="创建文章文件"></a>创建文章文件</h3><p><code>hexo new 布局(默认 post) xxx</code>，会在 .md 头部增加文章基本信息。</p>
+<p>该文件会出现在 <code>source/_posts</code>，平时写作也就关心这个文件夹就行了。</p>
 <h3 id="文章的变量信息-Front-matter"><a href="#文章的变量信息-Front-matter" class="headerlink" title="文章的变量信息 Front-matter"></a>文章的变量信息 Front-matter</h3><p>这是显示在每篇文章最上面，使用分割线区别文章内容，以表示文章基本信息的变量</p>
 <table>
 <thead>
