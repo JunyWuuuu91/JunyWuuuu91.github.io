@@ -418,6 +418,19 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line">	本站访客数：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 人次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="文章阅读次数"><a href="#文章阅读次数" class="headerlink" title="文章阅读次数"></a>文章阅读次数</h3><p>这和访客数是一样的原理。通过配置“不蒜子”来达到显示次数的目的。</p>
+<p>好在 Next 主题在其配置文件, _config.yml 提供了包括“不蒜子”在内的插件配置。</p>
+<p>只要开启和自定义文字内容就行了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Show PV/UV of the website/page with busuanzi.</span><br><span class="line"># Get more information on http://ibruce.info/2015/04/04/busuanzi/</span><br><span class="line"># 不蒜子访客统计配置</span><br><span class="line">busuanzi_count:</span><br><span class="line">  # count values only if the other configs are false</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  # custom uv span for the whole site </span><br><span class="line">  # 整个站点的 uv（访客统计）</span><br><span class="line">  site_uv: <span class="literal">true</span></span><br><span class="line">  site_uv_header: <span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user"</span>&gt;</span> 本站访客数<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  site_uv_footer: <span class="xml"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 人<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  # custom pv span for the whole site</span><br><span class="line">  # 整个站点的 pv（访问统计）</span><br><span class="line">  site_pv: <span class="literal">true</span></span><br><span class="line">  site_pv_header: <span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-eye"</span>&gt;</span> 本站阅读量<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  site_pv_footer: <span class="xml"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 次<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  # custom pv span for one page only</span><br><span class="line">  # 文章阅读量配置</span><br><span class="line">  page_pv: <span class="literal">true</span></span><br><span class="line">  page_pv_header: <span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-file-o"</span>&gt;</span>已阅读<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  page_pv_footer: <span class="xml"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 次<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这里有个细节要注意，就是不蒜子在官网也说了，更换了 CDN 地址。而在 Next 自带的不蒜子 CDN 配置中还是老的，所以会出现访客记录不显示的问题。找到文件</p>
+<blockquote>
+<p>/theme/next/layout/_third-party/analytics/busuanzi-counter.swig文件</p>
+<p>替换 CDN 地址</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>还有个细节，Next 既然都自带了不蒜子的所有统计功能，所以就不要按第一种方式显示了。不然会冲突。</p>
 <h2 id="细节调整"><a href="#细节调整" class="headerlink" title="细节调整"></a>细节调整</h2><h3 id="页面-Footer-文字更改"><a href="#页面-Footer-文字更改" class="headerlink" title="页面 Footer 文字更改"></a>页面 Footer 文字更改</h3><p>首先找到一个模板渲染文件和存放中文的语言配置文件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- \themes\next\layout\_partials\下面的footer.swig文件</span><br><span class="line">- \themes\next\languages\ 下面的语言文件zh-Hans.yml</span><br></pre></td></tr></table></figure>
 
@@ -1226,10 +1239,7 @@
   <div class="theme-info">原创笔记和文章 </div>
 
 
-<span class="post-meta-divider">|</span>
-<span id="busuanzi_container_site_uv">
-	本站访客数：<span id="busuanzi_value_site_uv"></span> 人次
-</span>
+
 
 
 
@@ -1241,7 +1251,7 @@
     <span class="site-uv">
       <i class="fa fa-user"> 本站访客数</i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      <i> 人</i>
+      
     </span>
   
 
