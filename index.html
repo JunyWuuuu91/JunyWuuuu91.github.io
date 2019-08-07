@@ -431,6 +431,16 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <p>还有个细节，Next 既然都自带了不蒜子的所有统计功能，所以就不要按第一种方式显示了。不然会冲突。</p>
+<h3 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h3><p>使用的是 github App，载体是某个仓库的 issue。</p>
+<h4 id="step1：创建新的-github-应用"><a href="#step1：创建新的-github-应用" class="headerlink" title="step1：创建新的 github 应用"></a>step1：创建新的 github 应用</h4><blockquote>
+<p>这个也是用于第三方登录认证用的</p>
+</blockquote>
+<p>按照要求填写，应用名（随意）、主页（博客网址）、描述、网址（博客网址）。</p>
+<p>创建成功后，github 会提供 <code>Client ID</code> 和 <code>Client Secret</code>两个密钥</p>
+<h4 id="step2：配置-Next"><a href="#step2：配置-Next" class="headerlink" title="step2：配置 Next"></a>step2：配置 Next</h4><p>找到主题配置文件 <code>_config.yml</code>，老版本搜“gitalk”，新版本搜“gitment”</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  # 开启 git issue 评论</span><br><span class="line">  enable: true # 需要开启</span><br><span class="line">  mint: <span class="literal">true</span> </span><br><span class="line">  count: <span class="literal">true</span> </span><br><span class="line">  lazy: <span class="literal">false</span> </span><br><span class="line">  cleanly: <span class="literal">false</span> </span><br><span class="line">  language: </span><br><span class="line">  github_user: # github 账号</span><br><span class="line">  github_repo: # github 某个仓库名，最终评论存在于 Issue</span><br><span class="line">  client_id: # 创建应用时提供的 </span><br><span class="line">  client_secret: # 创建应用时提供的 </span><br><span class="line">  proxy_gateway: </span><br><span class="line">  redirect_protocol:</span><br></pre></td></tr></table></figure>
+
+<p>若在评论框控件中出现了报错， 可以尝试换个仓库</p>
 <h2 id="细节调整"><a href="#细节调整" class="headerlink" title="细节调整"></a>细节调整</h2><h3 id="页面-Footer-文字更改"><a href="#页面-Footer-文字更改" class="headerlink" title="页面 Footer 文字更改"></a>页面 Footer 文字更改</h3><p>首先找到一个模板渲染文件和存放中文的语言配置文件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- \themes\next\layout\_partials\下面的footer.swig文件</span><br><span class="line">- \themes\next\languages\ 下面的语言文件zh-Hans.yml</span><br></pre></td></tr></table></figure>
 
@@ -1407,6 +1417,19 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
 
 
 
