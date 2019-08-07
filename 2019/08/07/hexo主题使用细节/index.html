@@ -123,20 +123,20 @@
 
 
 
-<meta name="description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式写作中…. 插件功能访客统计利用三方脚本“不蒜子”，只需要两步  在 footer.swig 文件中引入 Script（关注官网提供的CDN是否">
+<meta name="description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式设置首页文章展示数量在站点的配置文件中设置 1234index_generator:  path: &apos;&apos;  per_page: 1  order">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo主题使用细节">
 <meta property="og:url" content="http://yoursite.com/2019/08/07/hexo主题使用细节/index.html">
 <meta property="og:site_name" content="前端技术研究所">
-<meta property="og:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式写作中…. 插件功能访客统计利用三方脚本“不蒜子”，只需要两步  在 footer.swig 文件中引入 Script（关注官网提供的CDN是否">
+<meta property="og:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式设置首页文章展示数量在站点的配置文件中设置 1234index_generator:  path: &apos;&apos;  per_page: 1  order">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3305482-104a1d0474d84ba7.png?imageMogr2/auto-orient/">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3305482-cceeefaaed29bc8c.png?imageMogr2/auto-orient/">
-<meta property="og:updated_time" content="2019-08-07T15:59:51.492Z">
+<meta property="og:updated_time" content="2019-08-07T16:32:22.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo主题使用细节">
-<meta name="twitter:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式写作中…. 插件功能访客统计利用三方脚本“不蒜子”，只需要两步  在 footer.swig 文件中引入 Script（关注官网提供的CDN是否">
+<meta name="twitter:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式设置首页文章展示数量在站点的配置文件中设置 1234index_generator:  path: &apos;&apos;  per_page: 1  order">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3305482-104a1d0474d84ba7.png?imageMogr2/auto-orient/">
 
 
@@ -417,7 +417,33 @@
         <p>Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。</p>
 <p>除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客 </p>
 <p><a href="https://hexo-guide.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">https://hexo-guide.readthedocs.io/zh_CN/latest/index.html</a></p>
-<h2 id="布局样式"><a href="#布局样式" class="headerlink" title="布局样式"></a>布局样式</h2><p>写作中….</p>
+<h2 id="布局样式"><a href="#布局样式" class="headerlink" title="布局样式"></a>布局样式</h2><h3 id="设置首页文章展示数量"><a href="#设置首页文章展示数量" class="headerlink" title="设置首页文章展示数量"></a>设置首页文章展示数量</h3><p>在站点的配置文件中设置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">index_generator:</span><br><span class="line">  path: <span class="string">''</span></span><br><span class="line">  per_page: <span class="number">1</span></span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
+
+<p>标签/分类也是同理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">archive_generator:</span><br><span class="line">  per_page: <span class="number">20</span></span><br><span class="line">  yearly: <span class="literal">true</span></span><br><span class="line">  monthly: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">tag_generator:</span><br><span class="line">  per_page: <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="设置首页文章阅读全文"><a href="#设置首页文章阅读全文" class="headerlink" title="设置首页文章阅读全文"></a>设置首页文章阅读全文</h3><p>有三种方式，但是注意不能同时使用，可能出现设置无效的情况</p>
+<h4 id="文章内容中插入标记表示截断"><a href="#文章内容中插入标记表示截断" class="headerlink" title="文章内容中插入标记表示截断"></a>文章内容中插入标记表示截断</h4><blockquote>
+<p>推荐的方式</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="文章头部信息中配置描述"><a href="#文章头部信息中配置描述" class="headerlink" title="文章头部信息中配置描述"></a>文章头部信息中配置描述</h4><blockquote>
+<p>大概能显示几段内容</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">front-matter:description</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动形成摘要，配置主题文件"><a href="#自动形成摘要，配置主题文件" class="headerlink" title="自动形成摘要，配置主题文件"></a>自动形成摘要，配置主题文件</h4><blockquote>
+<p>限定了内容字数，如果字数特别少的话，需要配首页文章显示数量以达到比较好的效果。</p>
+<p>如果使用 md 语法，则会解析成字符串，所以不推荐这种方式</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  length: <span class="number">150</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+
+
 <h2 id="插件功能"><a href="#插件功能" class="headerlink" title="插件功能"></a>插件功能</h2><h3 id="访客统计"><a href="#访客统计" class="headerlink" title="访客统计"></a>访客统计</h3><p>利用三方脚本“不蒜子”，只需要两步</p>
 <ul>
 <li>在 footer.swig 文件中引入 Script（关注官网提供的CDN是否改变）</li>
@@ -453,9 +479,14 @@
 <p>按照要求填写，应用名（随意）、主页（博客网址）、描述、网址（博客网址）。</p>
 <p>创建成功后，github 会提供 <code>Client ID</code> 和 <code>Client Secret</code>两个密钥</p>
 <h4 id="step2：配置-Next"><a href="#step2：配置-Next" class="headerlink" title="step2：配置 Next"></a>step2：配置 Next</h4><p>找到主题配置文件 <code>_config.yml</code>，老版本搜“gitalk”，新版本搜“gitment”</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  # 开启 git issue 评论</span><br><span class="line">  enable: true # 需要开启</span><br><span class="line">  mint: <span class="literal">true</span> </span><br><span class="line">  count: <span class="literal">true</span> </span><br><span class="line">  lazy: <span class="literal">false</span> </span><br><span class="line">  cleanly: <span class="literal">false</span> </span><br><span class="line">  language: </span><br><span class="line">  github_user: # github 账号</span><br><span class="line">  github_repo: # github 某个仓库名，最终评论存在于 Issue</span><br><span class="line">  client_id: # 创建应用时提供的 </span><br><span class="line">  client_secret: # 创建应用时提供的 </span><br><span class="line">  proxy_gateway: </span><br><span class="line">  redirect_protocol:</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  # 开启 git issue 评论</span><br><span class="line">  enable: true # 需要开启</span><br><span class="line">  mint: <span class="literal">true</span> </span><br><span class="line">  count: <span class="literal">true</span> </span><br><span class="line">  lazy: false # 点击按钮后才显示评论控件</span><br><span class="line">  cleanly: true # 隐藏一些控件自带的广告信息</span><br><span class="line">  language: </span><br><span class="line">  github_user: # github 账号</span><br><span class="line">  github_repo: # github 某个仓库名，最终评论存在于 Issue</span><br><span class="line">  client_id: # 创建应用时提供的 </span><br><span class="line">  client_secret: # 创建应用时提供的 </span><br><span class="line">  proxy_gateway: </span><br><span class="line">  redirect_protocol:</span><br></pre></td></tr></table></figure>
 
 <p>若在评论框控件中出现了报错， 可以尝试换个仓库</p>
+<h4 id="step3：关闭某页面的评论"><a href="#step3：关闭某页面的评论" class="headerlink" title="step3：关闭某页面的评论"></a>step3：关闭某页面的评论</h4><blockquote>
+<p>比如分类/标签页面，他们本质上也是一个 md 文件。找到他们后也是在文件头部设置关闭评论</p>
+</blockquote>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: All tags</span><br><span class="line">date: 2015-12-16 17:05:24</span><br><span class="line">type: "tags"</span><br><span class="line">comments: false # 这个地方给他关了</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
 <h2 id="细节调整"><a href="#细节调整" class="headerlink" title="细节调整"></a>细节调整</h2><h3 id="页面-Footer-文字更改"><a href="#页面-Footer-文字更改" class="headerlink" title="页面 Footer 文字更改"></a>页面 Footer 文字更改</h3><p>首先找到一个模板渲染文件和存放中文的语言配置文件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- \themes\next\layout\_partials\下面的footer.swig文件</span><br><span class="line">- \themes\next\languages\ 下面的语言文件zh-Hans.yml</span><br></pre></td></tr></table></figure>
 
@@ -693,7 +724,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#布局样式"><span class="nav-number">1.</span> <span class="nav-text">布局样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件功能"><span class="nav-number">2.</span> <span class="nav-text">插件功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访客统计"><span class="nav-number">2.1.</span> <span class="nav-text">访客统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章阅读次数"><span class="nav-number">2.2.</span> <span class="nav-text">文章阅读次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论功能"><span class="nav-number">2.3.</span> <span class="nav-text">评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#step1：创建新的-github-应用"><span class="nav-number">2.3.1.</span> <span class="nav-text">step1：创建新的 github 应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2：配置-Next"><span class="nav-number">2.3.2.</span> <span class="nav-text">step2：配置 Next</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节调整"><span class="nav-number">3.</span> <span class="nav-text">细节调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面-Footer-文字更改"><span class="nav-number">3.1.</span> <span class="nav-text">页面 Footer 文字更改</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#布局样式"><span class="nav-number">1.</span> <span class="nav-text">布局样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置首页文章展示数量"><span class="nav-number">1.1.</span> <span class="nav-text">设置首页文章展示数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置首页文章阅读全文"><span class="nav-number">1.2.</span> <span class="nav-text">设置首页文章阅读全文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文章内容中插入标记表示截断"><span class="nav-number">1.2.1.</span> <span class="nav-text">文章内容中插入标记表示截断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章头部信息中配置描述"><span class="nav-number">1.2.2.</span> <span class="nav-text">文章头部信息中配置描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动形成摘要，配置主题文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">自动形成摘要，配置主题文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件功能"><span class="nav-number">2.</span> <span class="nav-text">插件功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访客统计"><span class="nav-number">2.1.</span> <span class="nav-text">访客统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章阅读次数"><span class="nav-number">2.2.</span> <span class="nav-text">文章阅读次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论功能"><span class="nav-number">2.3.</span> <span class="nav-text">评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#step1：创建新的-github-应用"><span class="nav-number">2.3.1.</span> <span class="nav-text">step1：创建新的 github 应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2：配置-Next"><span class="nav-number">2.3.2.</span> <span class="nav-text">step2：配置 Next</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step3：关闭某页面的评论"><span class="nav-number">2.3.3.</span> <span class="nav-text">step3：关闭某页面的评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节调整"><span class="nav-number">3.</span> <span class="nav-text">细节调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面-Footer-文字更改"><span class="nav-number">3.1.</span> <span class="nav-text">页面 Footer 文字更改</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -911,6 +942,11 @@
     
 <!-- END LOCAL -->
 
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
     
 
     

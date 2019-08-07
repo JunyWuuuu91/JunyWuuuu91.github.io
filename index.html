@@ -398,70 +398,38 @@
 
       
         
-          
-            <p>Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。</p>
+          <p>Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。</p>
 <p>除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客 </p>
 <p><a href="https://hexo-guide.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">https://hexo-guide.readthedocs.io/zh_CN/latest/index.html</a></p>
-<h2 id="布局样式"><a href="#布局样式" class="headerlink" title="布局样式"></a>布局样式</h2><p>写作中….</p>
-<h2 id="插件功能"><a href="#插件功能" class="headerlink" title="插件功能"></a>插件功能</h2><h3 id="访客统计"><a href="#访客统计" class="headerlink" title="访客统计"></a>访客统计</h3><p>利用三方脚本“不蒜子”，只需要两步</p>
-<ul>
-<li>在 footer.swig 文件中引入 Script（关注官网提供的CDN是否改变）</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="布局样式"><a href="#布局样式" class="headerlink" title="布局样式"></a>布局样式</h2><h3 id="设置首页文章展示数量"><a href="#设置首页文章展示数量" class="headerlink" title="设置首页文章展示数量"></a>设置首页文章展示数量</h3><p>在站点的配置文件中设置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">index_generator:</span><br><span class="line">  path: <span class="string">''</span></span><br><span class="line">  per_page: <span class="number">1</span></span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>在  footer.swig  任意处添加显示人数统计的标签<ul>
-<li>pv，算访问次数</li>
-<li>uv，算访客人数</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line">	本站访客数：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 人次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>标签/分类也是同理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">archive_generator:</span><br><span class="line">  per_page: <span class="number">20</span></span><br><span class="line">  yearly: <span class="literal">true</span></span><br><span class="line">  monthly: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">tag_generator:</span><br><span class="line">  per_page: <span class="number">10</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="文章阅读次数"><a href="#文章阅读次数" class="headerlink" title="文章阅读次数"></a>文章阅读次数</h3><p>这和访客数是一样的原理。通过配置“不蒜子”来达到显示次数的目的。</p>
-<p>好在 Next 主题在其配置文件, _config.yml 提供了包括“不蒜子”在内的插件配置。</p>
-<p>只要开启和自定义文字内容就行了</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Show PV/UV of the website/page with busuanzi.</span><br><span class="line"># Get more information on http://ibruce.info/2015/04/04/busuanzi/</span><br><span class="line"># 不蒜子访客统计配置</span><br><span class="line">busuanzi_count:</span><br><span class="line">  # count values only if the other configs are false</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  # custom uv span for the whole site </span><br><span class="line">  # 整个站点的 uv（访客统计）</span><br><span class="line">  site_uv: <span class="literal">true</span></span><br><span class="line">  site_uv_header: <span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user"</span>&gt;</span> 本站访客数<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  site_uv_footer: <span class="xml"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 人<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  # custom pv span for the whole site</span><br><span class="line">  # 整个站点的 pv（访问统计）</span><br><span class="line">  site_pv: <span class="literal">true</span></span><br><span class="line">  site_pv_header: <span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-eye"</span>&gt;</span> 本站阅读量<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  site_pv_footer: <span class="xml"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 次<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  # custom pv span for one page only</span><br><span class="line">  # 文章阅读量配置</span><br><span class="line">  page_pv: <span class="literal">true</span></span><br><span class="line">  page_pv_header: <span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-file-o"</span>&gt;</span>已阅读<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line">  page_pv_footer: <span class="xml"><span class="tag">&lt;<span class="name">i</span>&gt;</span> 次<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>这里有个细节要注意，就是不蒜子在官网也说了，更换了 CDN 地址。而在 Next 自带的不蒜子 CDN 配置中还是老的，所以会出现访客记录不显示的问题。找到文件</p>
-<blockquote>
-<p>/theme/next/layout/_third-party/analytics/busuanzi-counter.swig文件</p>
-<p>替换 CDN 地址</p>
+<h3 id="设置首页文章阅读全文"><a href="#设置首页文章阅读全文" class="headerlink" title="设置首页文章阅读全文"></a>设置首页文章阅读全文</h3><p>有三种方式，但是注意不能同时使用，可能出现设置无效的情况</p>
+<h4 id="文章内容中插入标记表示截断"><a href="#文章内容中插入标记表示截断" class="headerlink" title="文章内容中插入标记表示截断"></a>文章内容中插入标记表示截断</h4><blockquote>
+<p>推荐的方式</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>还有个细节，Next 既然都自带了不蒜子的所有统计功能，所以就不要按第一种方式显示了。不然会冲突。</p>
-<h3 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h3><p>使用的是 github App，载体是某个仓库的 issue。</p>
-<h4 id="step1：创建新的-github-应用"><a href="#step1：创建新的-github-应用" class="headerlink" title="step1：创建新的 github 应用"></a>step1：创建新的 github 应用</h4><blockquote>
-<p>这个也是用于第三方登录认证用的</p>
+<h4 id="文章头部信息中配置描述"><a href="#文章头部信息中配置描述" class="headerlink" title="文章头部信息中配置描述"></a>文章头部信息中配置描述</h4><blockquote>
+<p>大概能显示几段内容</p>
 </blockquote>
-<p>按照要求填写，应用名（随意）、主页（博客网址）、描述、网址（博客网址）。</p>
-<p>创建成功后，github 会提供 <code>Client ID</code> 和 <code>Client Secret</code>两个密钥</p>
-<h4 id="step2：配置-Next"><a href="#step2：配置-Next" class="headerlink" title="step2：配置 Next"></a>step2：配置 Next</h4><p>找到主题配置文件 <code>_config.yml</code>，老版本搜“gitalk”，新版本搜“gitment”</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  # 开启 git issue 评论</span><br><span class="line">  enable: true # 需要开启</span><br><span class="line">  mint: <span class="literal">true</span> </span><br><span class="line">  count: <span class="literal">true</span> </span><br><span class="line">  lazy: <span class="literal">false</span> </span><br><span class="line">  cleanly: <span class="literal">false</span> </span><br><span class="line">  language: </span><br><span class="line">  github_user: # github 账号</span><br><span class="line">  github_repo: # github 某个仓库名，最终评论存在于 Issue</span><br><span class="line">  client_id: # 创建应用时提供的 </span><br><span class="line">  client_secret: # 创建应用时提供的 </span><br><span class="line">  proxy_gateway: </span><br><span class="line">  redirect_protocol:</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">front-matter:description</span><br></pre></td></tr></table></figure>
 
-<p>若在评论框控件中出现了报错， 可以尝试换个仓库</p>
-<h2 id="细节调整"><a href="#细节调整" class="headerlink" title="细节调整"></a>细节调整</h2><h3 id="页面-Footer-文字更改"><a href="#页面-Footer-文字更改" class="headerlink" title="页面 Footer 文字更改"></a>页面 Footer 文字更改</h3><p>首先找到一个模板渲染文件和存放中文的语言配置文件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- \themes\next\layout\_partials\下面的footer.swig文件</span><br><span class="line">- \themes\next\languages\ 下面的语言文件zh-Hans.yml</span><br></pre></td></tr></table></figure>
-
-<p>第一个文件，对应了底部的几个部分（默认情况下）</p>
-<ul>
-<li>第一行文字后面的作者名</li>
-<li>第二行左半边“由xxx强力驱动”</li>
-<li>第二行右半边“next版本”</li>
-</ul>
-<p>这里是对第二个文件的配置变量做了一个引用。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3305482-104a1d0474d84ba7.png?imageMogr2/auto-orient/" alt></p>
-<p>对于上图中的链接，就是以 a 标签形式存在。</p>
-<ul>
-<li>第一个框，可以不改，因为就显示作者信息</li>
-<li>第二个框。将引号内的 a 标签去除（保留引号）</li>
-<li>第三个框。a 标签全部去除</li>
-</ul>
-<p>如果要更改对应变量的文字，则去第二个文件中重新配置。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3305482-cceeefaaed29bc8c.png?imageMogr2/auto-orient/" alt></p>
-
-          
+<h4 id="自动形成摘要，配置主题文件"><a href="#自动形成摘要，配置主题文件" class="headerlink" title="自动形成摘要，配置主题文件"></a>自动形成摘要，配置主题文件</h4><blockquote>
+<p>限定了内容字数，如果字数特别少的话，需要配首页文章显示数量以达到比较好的效果。</p>
+<p>如果使用 md 语法，则会解析成字符串，所以不推荐这种方式</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  length: <span class="number">150</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/07/hexo主题使用细节/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -600,489 +568,14 @@
 
       
         
-          
-            <h2 id="AMD-require-配置函数"><a href="#AMD-require-配置函数" class="headerlink" title="AMD - require 配置函数"></a>AMD - require 配置函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  AMD - require 配置函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">  <span class="comment">// 公共路径</span></span><br><span class="line">  baseUrl: <span class="string">'/xxx/xxx'</span>,</span><br><span class="line">  <span class="comment">// 插件库的映射字典</span></span><br><span class="line">  paths: &#123;</span><br><span class="line">    <span class="string">'jQuery'</span>: [ <span class="comment">// 每个插件或库的路径，使用的时候可以直接使用其key的部分来代替路径引入</span></span><br><span class="line">      <span class="string">'cnd:/xxxxx'</span>, <span class="comment">// 数组形式value值，第一个无法加载时，执行第二个</span></span><br><span class="line">      <span class="string">'lib/xx/xxx'</span> <span class="comment">// 可以省略 js 后缀</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/*解决非AMD规范的js时， 解决其载入顺序</span></span><br><span class="line"><span class="comment">    有很多的插件和库并不是完全符合模块化规范</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  shim: &#123;</span><br><span class="line">    <span class="string">'easyui'</span>: &#123;</span><br><span class="line">        <span class="comment">// 表明还需要依赖哪些模块</span></span><br><span class="line">        deps: [</span><br><span class="line">            <span class="string">'jquery'</span>,</span><br><span class="line">            <span class="comment">// 对CSS路径的引用 css!</span></span><br><span class="line">            <span class="string">'css!lib/easyui-1.5.1/themes/metro-blue-ext/easyui.css'</span>,</span><br><span class="line">            <span class="string">'css!lib/easyui-1.5.1/themes/icon.css'</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="comment">// 输出的变量名</span></span><br><span class="line">        exports: <span class="string">'jQuery'</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 对不同文件前缀给不同的模块</span></span><br><span class="line">  map: &#123;</span><br><span class="line">    <span class="comment">// 在some模块使用 foo 的时候，会使用不同的版本</span></span><br><span class="line">    <span class="string">'some1'</span>: &#123;</span><br><span class="line">      <span class="string">'foo'</span>: <span class="string">'foov1'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'some2'</span>: &#123;</span><br><span class="line">      <span class="string">'foo'</span>: <span class="string">'foov2'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 对所有模块都使用这个版本</span></span><br><span class="line">    <span class="string">'*'</span>: &#123;</span><br><span class="line">      <span class="string">'css'</span>: <span class="string">'lib/require-css/0.1.8/css.min'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 其他情况下需要用到变量和方法的</span></span><br><span class="line"></span><br><span class="line">  config: &#123;</span><br><span class="line">    <span class="comment">// 这里的bar实际上是模块的名字，xxxx/bar.js</span></span><br><span class="line">    <span class="string">'bar'</span>: &#123;</span><br><span class="line">      size: <span class="string">'large'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 对应的调用方式， 在对应模块下， 这里 bar.js</span></span><br><span class="line"><span class="comment">      define(function (require, exports, module) &#123;</span></span><br><span class="line"><span class="comment">        var size = module.config().size</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">      第二种方式</span></span><br><span class="line"><span class="comment">      define(['module'], function (module) &#123;</span></span><br><span class="line"><span class="comment">        var size = module.config().size</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="AMD-require-模块定义"><a href="#AMD-require-模块定义" class="headerlink" title="AMD - require 模块定义"></a>AMD - require 模块定义</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  AMD - require 模块定义</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 简单的键值对</span></span><br><span class="line"></span><br><span class="line">define(&#123;</span><br><span class="line">  color: <span class="string">'black'</span>,</span><br><span class="line">  size: <span class="string">'unsize'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 函数式定义</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...初始化...</span></span><br><span class="line">  <span class="keyword">var</span> xxx = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      xxx1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">      xxx2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)()</span><br><span class="line">  <span class="keyword">return</span> xxx</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3 存在依赖函数式</span></span><br><span class="line">define([<span class="string">'xx1'</span>, <span class="string">'xx2'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">xx1, xx2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> bomm = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  <span class="keyword">return</span> bomm <span class="comment">// 返回一个对象</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4 模块定义为一个函数</span></span><br><span class="line">define([<span class="string">'xx1'</span>, <span class="string">'xx2'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">xx1, xx2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5 包装CommonJS定义模块</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'a'</span>),</span><br><span class="line">      b = <span class="built_in">require</span>(<span class="string">'b'</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6 定义命名模块</span></span><br><span class="line">define(<span class="string">'name'</span>, [<span class="string">'xx1'</span>, <span class="string">'xx2'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">xx1, xx2</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ....</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ErrorJE">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/errorje.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端技术研究所">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/04/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T14:01:49+08:00">
-                2019-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/hexo搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ErrorJE">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/errorje.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端技术研究所">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/15/hexo搭建博客/" itemprop="url">hexo搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-15T00:35:20+08:00">
-                2019-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具使用/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>现在搭建博客是越来越方便了，一直想找个快速搭建博客的工具。现在记录一下<code>hexo</code>的使用和踩过的一些坑。希望对新手有所帮助。</p>
-<h1 id="搭建之前的环境准备"><a href="#搭建之前的环境准备" class="headerlink" title="搭建之前的环境准备"></a>搭建之前的环境准备</h1><h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>官网下载 git 安装包，然后进行安装。</p>
-<p><code>git bash</code> 是一个命令行工具，用来操作和仓库有关的行为。</p>
-<h3 id="SSH-连接远程库"><a href="#SSH-连接远程库" class="headerlink" title="SSH 连接远程库"></a>SSH 连接远程库</h3><blockquote>
-<p>当前前提是需要拥有 github 的账号</p>
-</blockquote>
-<h4 id="注册github账户"><a href="#注册github账户" class="headerlink" title="注册github账户"></a>注册github账户</h4><p>具体步骤很简单，不会可百度</p>
-<h4 id="创建-github-项目"><a href="#创建-github-项目" class="headerlink" title="创建 github 项目"></a>创建 github 项目</h4><p>新建一个项目，然后仓库的名字必须是 <code>xxx.github.io</code>， 这也是之后访问的 URL。</p>
-<p>到项目的设置里，去测试一下。</p>
-<p>点击 <code>setting</code>，拉到下面有个 <code>github pages</code>， 单击 <code>choose a theme</code>选择主题。选择好以后，返回，然后点击<code>xxx.github.io</code>链接，就能看到博客页面了。</p>
-<h4 id="SSH授权"><a href="#SSH授权" class="headerlink" title="SSH授权"></a>SSH授权</h4><p>通过 <code>SSH</code> 从本地同步连接到 <code>githun</code> 服务器。</p>
-<p>打开<code>git bash</code>， 输入 <code>ssh-keygen -t rsa</code>，回车3下</p>
-<blockquote>
-<p>这样就会在 C 盘用户目录下的<code>.ssh</code>目录下生成 <code>id_rsa</code> 和 <code>id_rsa.pub</code>两个文件。</p>
-<p>前者是私钥，后者是公钥。</p>
-<p>私钥，证明自己身份。</p>
-<p>公钥，是给出去的。</p>
-</blockquote>
-<p>用 txt 方式打开公钥<code>id_rsa.pub</code>，复制全部内容，添加到 Github 上。</p>
-<blockquote>
-<p>这样本地的密钥<code>id_rsa</code>和 Github 上的公钥 <code>id_rsa.pub</code>进行配对。</p>
-</blockquote>
-<p>在 Github 上，进入自己的 <code>Setting</code> 然后点击左侧的 <code>SSH and GPG keys</code>，然后添加一个 <code>New SSH key</code>，将公钥内容复制进去保存。</p>
-<p>最后打开 <code>git bash</code> 输入 <code>ssh -T git@github.com</code> 进行授权测试。</p>
-<blockquote>
-<p>若返回“hi  xxxx You’ve successfullly….” 说明是授权成功的。</p>
-</blockquote>
-<h3 id="github-desktop"><a href="#github-desktop" class="headerlink" title="github desktop"></a>github desktop</h3><p>但是现在有更好的方式，不用使用这种传统使用命令行的方式了。就是下载 <code>github</code>的客户端版本,<code>github desktop</code>。</p>
-<p>到 hexo 中执行博客提交命令时，一般会验证 SSH。现在有了这个只要一次登录就行了。</p>
-<h3 id="tortoisegit"><a href="#tortoisegit" class="headerlink" title="tortoisegit"></a>tortoisegit</h3><p>也是可视化操作 github 命令的。但是没有 desktop 现代</p>
-<h2 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h2><p>node 安装，直接去官网下载一个。安装好之后，打开 Cmd 命令行，输入 <code>node -v</code> 检查下是否成功。</p>
-<h2 id="安装-Hexo-和初始化"><a href="#安装-Hexo-和初始化" class="headerlink" title="安装 Hexo 和初始化"></a>安装 Hexo 和初始化</h2><h3 id="安装-Hexo-脚手架"><a href="#安装-Hexo-脚手架" class="headerlink" title="安装 Hexo 脚手架"></a>安装 Hexo 脚手架</h3><p><code>npm i -g hexo-cli</code>，作为脚手架工具，相比之后会经常用到，所以安装到全局。</p>
-<h3 id="初始化博客本地目录"><a href="#初始化博客本地目录" class="headerlink" title="初始化博客本地目录"></a>初始化博客本地目录</h3><blockquote>
-<p>这里有个坑，之前创建的 github 项目，仅仅是作为特殊的博客载体。无需 clone 到本地。</p>
-<p>我们会在本地写文章，然后本地启动 hexo 服务器查看静态页是怎样的，最后通过配置文件去指定上面的仓库URL，并获取权限。然后通过 hexo 一键部署到上面。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init xxx // 新建一个目录，作为 hexo 管理的博客项目。</span><br><span class="line">cd xxx // 进入这个目录</span><br><span class="line">npm i // 安装必要的依赖</span><br></pre></td></tr></table></figure>
-
-<h3 id="Hexo-项目目录"><a href="#Hexo-项目目录" class="headerlink" title="Hexo 项目目录"></a>Hexo 项目目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml 配置文件</span><br><span class="line">├── package.json 依赖配置文件</span><br><span class="line">├── scaffolds 模板文件，每次新建 md 文章，都会去应用。默认就3个post等</span><br><span class="line">├── source 用户资源目录</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts 文章所在地</span><br><span class="line">└── themes 主题选定。下载或者clone的主题包放这里。</span><br><span class="line">├── public 最后经过 Hexo 解析，被部署到 github 分支上的目录</span><br></pre></td></tr></table></figure>
-
-<h1 id="开始-hello-world"><a href="#开始-hello-world" class="headerlink" title="开始 hello world"></a>开始 hello world</h1><h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>不不管网站的内容，先从基本的网站配置开始。</p>
-<blockquote>
-<p>配置文件，<code>_config.yml</code>。大部分的功能实现，都是基于这个配置</p>
-<p>下面列出几个模块的配置项</p>
-</blockquote>
-<h3 id="网站-Site"><a href="#网站-Site" class="headerlink" title="网站 Site"></a>网站 Site</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">ErrorJE's</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">ErrorJE</span> <span class="string">学习记录分享</span> <span class="string">(主要用于SEO)</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">ErrorJE</span> <span class="string">前端技术</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">ErrorJE</span> <span class="string">前端</span> <span class="string">架构师</span> <span class="string">全栈</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">ErrorJE</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh</span></span><br><span class="line"><span class="attr">timezone:</span><span class="string">（时区的名字）</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="网址-URL"><a href="#网址-URL" class="headerlink" title="网址 URL"></a>网址 URL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">基本没用。若博客放在子目录的，就需要指定下目录</span><br></pre></td></tr></table></figure>
-
-<h3 id="目录-Directory"><a href="#目录-Directory" class="headerlink" title="目录 Directory"></a>目录 Directory</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">暂时不修改。主要是一些资源存放的目录设定</span><br></pre></td></tr></table></figure>
-
-<h3 id="文章-Writing"><a href="#文章-Writing" class="headerlink" title="文章 Writing"></a>文章 Writing</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># 新文章的文件名</span></span><br><span class="line">	<span class="comment"># 可以使用 :year-:month-:day-:title.md 的格式，更方便管理</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span> <span class="comment"># 默认布局</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># 转换 title</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># 新标签页中打开链接</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span> <span class="comment"># true时，每个文章顺带一个同名放资源的文件夹</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span> <span class="comment"># 将链接改为根目录的相对地址</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span> <span class="comment"># 显示未来的文章</span></span><br><span class="line"><span class="attr">highlight:</span> <span class="comment"># 代码块设置</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  tab_replace:</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="类和标签-Category-amp-Tag"><a href="#类和标签-Category-amp-Tag" class="headerlink" title="类和标签 Category &amp; Tag"></a>类和标签 Category &amp; Tag</h3><blockquote>
-<p>在文章的头部信息中去配置不同的分类和标签</p>
-</blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">前端</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">工具</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">工具教程</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">踩坑经验</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="日期-时间格式-Date-Time-format"><a href="#日期-时间格式-Date-Time-format" class="headerlink" title="日期/时间格式 Date / Time format"></a>日期/时间格式 Date / Time format</h3><blockquote>
-<p>使用 moment.js 来解析时间</p>
-</blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="attr">HH:mm:ss</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="分页-Pagination"><a href="#分页-Pagination" class="headerlink" title="分页 Pagination"></a>分页 Pagination</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">per_page:</span> <span class="number">10</span> <span class="comment"># 每页文章量（0位关闭分页功能）</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span> <span class="comment"># 分页目录</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="扩展-Extensions-主题和部署地址"><a href="#扩展-Extensions-主题和部署地址" class="headerlink" title="扩展 Extensions 主题和部署地址"></a>扩展 Extensions 主题和部署地址</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span> <span class="comment"># 当前主题名称</span></span><br><span class="line"><span class="attr">deploy:</span> <span class="comment"># 部署部分</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span> <span class="comment"># 使用 git 方式 </span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/ErrorJe/ErrorJE.github.io</span> <span class="comment"># 承载博客的仓库地址</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">[branch]</span> <span class="comment"># 分支名称。不写的话默认是 master 主分支</span></span><br><span class="line"><span class="attr">  message:</span> <span class="string">[message]</span> <span class="comment"># 非必需</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="初始化博客目录"><a href="#初始化博客目录" class="headerlink" title="初始化博客目录"></a>初始化博客目录</h3><p><code>hexo init xxxx</code>，新建一个名为 xxxx 的目录作为博客项目目录</p>
-<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p><code>hexo new 布局(默认 post) xxx</code>，新建后的文章名为 <code>xxx.md</code></p>
-<p>若文件名有空格，则用引号包裹起来。</p>
-<p><strong>布局的区别</strong></p>
-<blockquote>
-<p>默认有3种，仅仅是写了基础信息的模板而已。在 <code>scaffolds</code>目录下</p>
-</blockquote>
-<ol>
-<li>post 直接可以发布的文章</li>
-<li>page</li>
-<li>draft，草稿。后期需要 publish 才可以部署</li>
-</ol>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><p><code>hexo g</code>，还有两种选择</p>
-<ul>
-<li>hexo g - d， 生成文件后立即部署网站</li>
-<li>hexo g -w，监视文件变动</li>
-</ul>
-<h3 id="生成草稿"><a href="#生成草稿" class="headerlink" title="生成草稿"></a>生成草稿</h3><blockquote>
-<p>该步骤非必需</p>
-</blockquote>
-<p><code>hexo publish 布局 文件名</code></p>
-<h3 id="启动本地服务测试"><a href="#启动本地服务测试" class="headerlink" title="启动本地服务测试"></a>启动本地服务测试</h3><blockquote>
-<p>必须先安装依赖， <code>npm i --S hexo-server</code>。之后修改文章会自动更新服务。</p>
-</blockquote>
-<p><code>hexo server</code>，这是启动本地服务，可以看下效果。还有3个选项</p>
-<ul>
-<li>hexo s -p xxxx， 重新设定端口号</li>
-<li>hexo s -s 只使用静态文件</li>
-<li>hexo s -l，启动日志记录，使用覆盖记录格式</li>
-</ul>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><p><code>hexo d</code>一键部署。</p>
-<blockquote>
-<p>如果不是用<code>hexo-cli</code>的话，这一步还需要安装 <code>npm i -S hexo-deployer-git</code>，用于发布博客到 git 的 Npm 包。</p>
-<p>若报错没有找到 git ，也是因为没有安装这个依赖。</p>
-</blockquote>
-<p>执行这个命令后，会让你登录 <code>github</code></p>
-<h3 id="清除缓存和静态文件"><a href="#清除缓存和静态文件" class="headerlink" title="清除缓存和静态文件"></a>清除缓存和静态文件</h3><p><code>hexo clean</code>，有时候更换主题没有变化，就需要清理缓存文件 db.json 和静态文件 public</p>
-<h2 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h2><h3 id="实际写作时的步骤"><a href="#实际写作时的步骤" class="headerlink" title="实际写作时的步骤"></a>实际写作时的步骤</h3><ul>
-<li><code>hexo new post xxxx</code>创建有基本信息填充的md文件</li>
-<li>复制自己写好的 md 内容，然后根据需要修改头部文章基本信息</li>
-<li><code>hexo g -d</code>生成静态文件后直接部署</li>
-<li>也可以本地调试<ul>
-<li><code>hexo g</code>生成静态文件</li>
-<li><code>hexo server</code>本地测试</li>
-<li><code>hexo d</code>发布部署</li>
-</ul>
-</li>
-</ul>
-<h3 id="创建文章文件"><a href="#创建文章文件" class="headerlink" title="创建文章文件"></a>创建文章文件</h3><p><code>hexo new 布局(默认 post) xxx</code>，会在 .md 头部增加文章基本信息。</p>
-<p>该文件会出现在 <code>source/_posts</code>，平时写作也就关心这个文件夹就行了。</p>
-<h3 id="文章的变量信息-Front-matter"><a href="#文章的变量信息-Front-matter" class="headerlink" title="文章的变量信息 Front-matter"></a>文章的变量信息 Front-matter</h3><p>这是显示在每篇文章最上面，使用分割线区别文章内容，以表示文章基本信息的变量</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>参数</td>
-<td>描述</td>
-<td>默认值</td>
-</tr>
-<tr>
-<td><code>layout</code></td>
-<td>布局</td>
-<td></td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>标题</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date</code></td>
-<td>建立日期</td>
-<td>文件建立日期</td>
-</tr>
-<tr>
-<td><code>updated</code></td>
-<td>更新日期</td>
-<td>文件更新日期</td>
-</tr>
-<tr>
-<td><code>comments</code></td>
-<td>开启文章的评论功能</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>tags</code></td>
-<td>标签（不适用于分页）</td>
-<td></td>
-</tr>
-<tr>
-<td><code>categories</code></td>
-<td>分类（不适用于分页）</td>
-<td></td>
-</tr>
-<tr>
-<td><code>permalink</code></td>
-<td>覆盖文章网址</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h3><p>在根目录下的 <code>source</code> 中，除了放文章，还可以把其他静态资源放进来。</p>
-<p>但是注意，最大是300M。比如创建一个图片目录<code>images</code>，像下面一样使用。</p>
-<blockquote>
-<p>虽然现在还没有显示，但是最后部署后，就是能访问到</p>
-</blockquote>
-<p><img src="/img/contact-bg,jpg" alt></p>
-<p>当然也可以在配置文件中去设置，每次新建文件的时候，一起把同名的静态资源目录也生成。最后就能使用下面这样的方式，让网页和md文件都能看到图片。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="其他自定义配置"><a href="#其他自定义配置" class="headerlink" title="其他自定义配置"></a>其他自定义配置</h1><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><ol>
-<li>买个域名</li>
-<li>去解析一下域名的 xxx.github.io，类型选择<code>cname</code></li>
-<li>githun的仓库设置，去<code>custom domain</code>填入这个域名</li>
-<li>若本地没有用的话，去 <code>source</code>目录新建<code>CNAME</code>文件，没有后缀，内容写域名</li>
-</ol>
-<h2 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h2><p>基本上一个博客，就是基于一个主题的。这里推荐 <code>beantech</code>。</p>
-<h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>下面3个步骤就可以搭建主题博客。</p>
-<ol>
-<li>先找到这个主题的 github 地址</li>
-<li>然后 clone 到博客项目的 theme 目录下</li>
-<li>去博客根目录下， 配置 <code>_config.yml</code>，去<code>extensions</code>中找 theme 配置该主题名</li>
-</ol>
-<h3 id="主题初始化"><a href="#主题初始化" class="headerlink" title="主题初始化"></a>主题初始化</h3><p>上面是在原有博客项目的基础上，去切换主题。</p>
-<p>下面这种方式是，先有主题，然后再去写博客。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech</span><br><span class="line">cd hexo-beantech</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>然后自定义配置文件等等。</p>
-<h3 id="推荐主题-NexT"><a href="#推荐主题-NexT" class="headerlink" title="推荐主题 NexT"></a>推荐主题 NexT</h3><p><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html</a></p>
-<p>有中文文档，也是目前 star 最多的主题。</p>
-<h2 id="利用-Github-搭建图床"><a href="#利用-Github-搭建图床" class="headerlink" title="利用 Github 搭建图床"></a>利用 Github 搭建图床</h2><p>在自己的博客git上创建一个个 <code>issues</code>，然后直接把图片拉进去就完事了。</p>
-<p>然后找到该图片的 URL 地址，最后在自己的博客里用</p>
-
-          
+          <h2 id="AMD-require-配置函数"><a href="#AMD-require-配置函数" class="headerlink" title="AMD - require 配置函数"></a>AMD - require 配置函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  AMD - require 配置函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">  <span class="comment">// 公共路径</span></span><br><span class="line">  baseUrl: <span class="string">'/xxx/xxx'</span>,</span><br><span class="line">  <span class="comment">// 插件库的映射字典</span></span><br><span class="line">  paths: &#123;</span><br><span class="line">    <span class="string">'jQuery'</span>: [ <span class="comment">// 每个插件或库的路径，使用的时候可以直接使用其key的部分来代替路径引入</span></span><br><span class="line">      <span class="string">'cnd:/xxxxx'</span>, <span class="comment">// 数组形式value值，第一个无法加载时，执行第二个</span></span><br><span class="line">      <span class="string">'lib/xx/xxx'</span> <span class="comment">// 可以省略 js 后缀</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/*解决非AMD规范的js时， 解决其载入顺序</span></span><br><span class="line"><span class="comment">    有很多的插件和库并不是完全符合模块化规范</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  shim: &#123;</span><br><span class="line">    <span class="string">'easyui'</span>: &#123;</span><br><span class="line">        <span class="comment">// 表明还需要依赖哪些模块</span></span><br><span class="line">        deps: [</span><br><span class="line">            <span class="string">'jquery'</span>,</span><br><span class="line">            <span class="comment">// 对CSS路径的引用 css!</span></span><br><span class="line">            <span class="string">'css!lib/easyui-1.5.1/themes/metro-blue-ext/easyui.css'</span>,</span><br><span class="line">            <span class="string">'css!lib/easyui-1.5.1/themes/icon.css'</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="comment">// 输出的变量名</span></span><br><span class="line">        exports: <span class="string">'jQuery'</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 对不同文件前缀给不同的模块</span></span><br><span class="line">  map: &#123;</span><br><span class="line">    <span class="comment">// 在some模块使用 foo 的时候，会使用不同的版本</span></span><br><span class="line">    <span class="string">'some1'</span>: &#123;</span><br><span class="line">      <span class="string">'foo'</span>: <span class="string">'foov1'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'some2'</span>: &#123;</span><br><span class="line">      <span class="string">'foo'</span>: <span class="string">'foov2'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 对所有模块都使用这个版本</span></span><br><span class="line">    <span class="string">'*'</span>: &#123;</span><br><span class="line">      <span class="string">'css'</span>: <span class="string">'lib/require-css/0.1.8/css.min'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 其他情况下需要用到变量和方法的</span></span><br><span class="line"></span><br><span class="line">  config: &#123;</span><br><span class="line">    <span class="comment">// 这里的bar实际上是模块的名字，xxxx/bar.js</span></span><br><span class="line">    <span class="string">'bar'</span>: &#123;</span><br><span class="line">      size: <span class="string">'large'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 对应的调用方式， 在对应模块下， 这里 bar.js</span></span><br><span class="line"><span class="comment">      define(function (require, exports, module) &#123;</span></span><br><span class="line"><span class="comment">        var size = module.config().size</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">      第二种方式</span></span><br><span class="line"><span class="comment">      define(['module'], function (module) &#123;</span></span><br><span class="line"><span class="comment">        var size = module.config().size</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/05/requirejs 配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1119,6 +612,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1427,6 +924,11 @@
     
 <!-- END LOCAL -->
 
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
     
 
     

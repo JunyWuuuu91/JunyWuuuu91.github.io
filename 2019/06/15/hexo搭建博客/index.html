@@ -444,6 +444,8 @@
 <p>到 hexo 中执行博客提交命令时，一般会验证 SSH。现在有了这个只要一次登录就行了。</p>
 <h3 id="tortoisegit"><a href="#tortoisegit" class="headerlink" title="tortoisegit"></a>tortoisegit</h3><p>也是可视化操作 github 命令的。但是没有 desktop 现代</p>
 <h2 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h2><p>node 安装，直接去官网下载一个。安装好之后，打开 Cmd 命令行，输入 <code>node -v</code> 检查下是否成功。</p>
+<a id="more"></a>
+
 <h2 id="安装-Hexo-和初始化"><a href="#安装-Hexo-和初始化" class="headerlink" title="安装 Hexo 和初始化"></a>安装 Hexo 和初始化</h2><h3 id="安装-Hexo-脚手架"><a href="#安装-Hexo-脚手架" class="headerlink" title="安装 Hexo 脚手架"></a>安装 Hexo 脚手架</h3><p><code>npm i -g hexo-cli</code>，作为脚手架工具，相比之后会经常用到，所以安装到全局。</p>
 <h3 id="初始化博客本地目录"><a href="#初始化博客本地目录" class="headerlink" title="初始化博客本地目录"></a>初始化博客本地目录</h3><blockquote>
 <p>这里有个坑，之前创建的 github 项目，仅仅是作为特殊的博客载体。无需 clone 到本地。</p>
@@ -527,6 +529,7 @@
 <li><code>hexo d</code>发布部署</li>
 </ul>
 </li>
+<li>更换主题的话可能还需要执行 <code>hexo clean</code>来清除缓存</li>
 </ul>
 <h3 id="创建文章文件"><a href="#创建文章文件" class="headerlink" title="创建文章文件"></a>创建文章文件</h3><p><code>hexo new 布局(默认 post) xxx</code>，会在 .md 头部增加文章基本信息。</p>
 <p>该文件会出现在 <code>source/_posts</code>，平时写作也就关心这个文件夹就行了。</p>
@@ -1052,6 +1055,11 @@
     
 <!-- END LOCAL -->
 
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
     
 
     
