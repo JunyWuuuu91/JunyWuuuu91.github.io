@@ -123,20 +123,20 @@
 
 
 
-<meta name="description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 布局样式写作中…. 插件功能写作中… 细节调整页面 Footer 文字更改首先找到一个模板渲染文件和存放中文的语言配置文件。 12- \themes\next\layout\_partials\下面的footer.swig文件- \themes\next\languages\ 下面的语言文件zh-Hans.yml  第一个文件，对应">
+<meta name="description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式写作中…. 插件功能访客统计利用三方脚本“不蒜子”，只需要两步  在 footer.swig 文件中引入 Script（关注官网提供的CDN是否">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo主题使用细节">
 <meta property="og:url" content="http://yoursite.com/2019/08/07/hexo主题使用细节/index.html">
 <meta property="og:site_name" content="前端技术研究所">
-<meta property="og:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 布局样式写作中…. 插件功能写作中… 细节调整页面 Footer 文字更改首先找到一个模板渲染文件和存放中文的语言配置文件。 12- \themes\next\layout\_partials\下面的footer.swig文件- \themes\next\languages\ 下面的语言文件zh-Hans.yml  第一个文件，对应">
+<meta property="og:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式写作中…. 插件功能访客统计利用三方脚本“不蒜子”，只需要两步  在 footer.swig 文件中引入 Script（关注官网提供的CDN是否">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3305482-104a1d0474d84ba7.png?imageMogr2/auto-orient/">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3305482-cceeefaaed29bc8c.png?imageMogr2/auto-orient/">
-<meta property="og:updated_time" content="2019-08-07T14:49:54.478Z">
+<meta property="og:updated_time" content="2019-08-07T15:25:01.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo主题使用细节">
-<meta name="twitter:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 布局样式写作中…. 插件功能写作中… 细节调整页面 Footer 文字更改首先找到一个模板渲染文件和存放中文的语言配置文件。 12- \themes\next\layout\_partials\下面的footer.swig文件- \themes\next\languages\ 下面的语言文件zh-Hans.yml  第一个文件，对应">
+<meta name="twitter:description" content="Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。 除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客  https://hexo-guide.readthedocs.io/zh_CN/latest/index.html 布局样式写作中…. 插件功能访客统计利用三方脚本“不蒜子”，只需要两步  在 footer.swig 文件中引入 Script（关注官网提供的CDN是否">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3305482-104a1d0474d84ba7.png?imageMogr2/auto-orient/">
 
 
@@ -381,6 +381,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">已阅读</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span><i> 次</i>
+            </span>
+          
 
           
 
@@ -400,8 +405,24 @@
 
       
         <p>Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。</p>
+<p>除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客 </p>
+<p><a href="https://hexo-guide.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">https://hexo-guide.readthedocs.io/zh_CN/latest/index.html</a></p>
 <h2 id="布局样式"><a href="#布局样式" class="headerlink" title="布局样式"></a>布局样式</h2><p>写作中….</p>
-<h2 id="插件功能"><a href="#插件功能" class="headerlink" title="插件功能"></a>插件功能</h2><p>写作中…</p>
+<h2 id="插件功能"><a href="#插件功能" class="headerlink" title="插件功能"></a>插件功能</h2><h3 id="访客统计"><a href="#访客统计" class="headerlink" title="访客统计"></a>访客统计</h3><p>利用三方脚本“不蒜子”，只需要两步</p>
+<ul>
+<li>在 footer.swig 文件中引入 Script（关注官网提供的CDN是否改变）</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在  footer.swig  任意处添加显示人数统计的标签<ul>
+<li>pv，算访问次数</li>
+<li>uv，算访客人数</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></span><br><span class="line">	本站访客数：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 人次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="细节调整"><a href="#细节调整" class="headerlink" title="细节调整"></a>细节调整</h2><h3 id="页面-Footer-文字更改"><a href="#页面-Footer-文字更改" class="headerlink" title="页面 Footer 文字更改"></a>页面 Footer 文字更改</h3><p>首先找到一个模板渲染文件和存放中文的语言配置文件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- \themes\next\layout\_partials\下面的footer.swig文件</span><br><span class="line">- \themes\next\languages\ 下面的语言文件zh-Hans.yml</span><br></pre></td></tr></table></figure>
 
@@ -632,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#布局样式"><span class="nav-number">1.</span> <span class="nav-text">布局样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件功能"><span class="nav-number">2.</span> <span class="nav-text">插件功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节调整"><span class="nav-number">3.</span> <span class="nav-text">细节调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面-Footer-文字更改"><span class="nav-number">3.1.</span> <span class="nav-text">页面 Footer 文字更改</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#布局样式"><span class="nav-number">1.</span> <span class="nav-text">布局样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件功能"><span class="nav-number">2.</span> <span class="nav-text">插件功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访客统计"><span class="nav-number">2.1.</span> <span class="nav-text">访客统计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节调整"><span class="nav-number">3.</span> <span class="nav-text">细节调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面-Footer-文字更改"><span class="nav-number">3.1.</span> <span class="nav-text">页面 Footer 文字更改</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -652,7 +673,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019.07 &mdash; <span itemprop="copyrightYear">2019</span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; 2019.07 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -662,20 +685,38 @@
 </div>
 
 
-  <div class="powered-by">由 <span>ErrorJE</span> 提供</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
 
   <div class="theme-info">原创笔记和文章 </div>
 
 
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv">
+	本站访客数：<span id="busuanzi_value_site_uv"></span> 人次
+</span>
+
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      <i> 人</i>
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 本站阅读量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      <i> 次</i>
+    </span>
+  
+</div>
+
 
 
 
