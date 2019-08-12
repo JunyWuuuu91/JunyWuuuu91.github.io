@@ -119,7 +119,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="uni-app,小程序,跨端,vue,">
 
 
 
@@ -130,16 +130,18 @@
 
 
 
-<meta name="description" content="ErrorJE&apos;s FE Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端技术研究所">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="[TOC] 与 vue 的区别不需要引入Vue-router由框架解决。页面创建时，自动将页面路由加入 pages.json 文件中。页面的跳转使用  123uni.navigateTo(&amp;#123;    url: &apos;test?id=1&amp;amp;name=uniapp&apos;&amp;#125;);  生命周期改动相对于 vue 的实例生命周期，uni-app 对程序应用层面和页面层面增加对应的生命周期 12">
+<meta name="keywords" content="uni-app,小程序,跨端,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uni-app框架了解">
+<meta property="og:url" content="http://yoursite.com/移动端/uni-app框架了解/index.html">
 <meta property="og:site_name" content="前端技术研究所">
-<meta property="og:description" content="ErrorJE&apos;s FE Blog">
+<meta property="og:description" content="[TOC] 与 vue 的区别不需要引入Vue-router由框架解决。页面创建时，自动将页面路由加入 pages.json 文件中。页面的跳转使用  123uni.navigateTo(&amp;#123;    url: &apos;test?id=1&amp;amp;name=uniapp&apos;&amp;#125;);  生命周期改动相对于 vue 的实例生命周期，uni-app 对程序应用层面和页面层面增加对应的生命周期 12">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-12T08:32:21.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端技术研究所">
-<meta name="twitter:description" content="ErrorJE&apos;s FE Blog">
+<meta name="twitter:title" content="uni-app框架了解">
+<meta name="twitter:description" content="[TOC] 与 vue 的区别不需要引入Vue-router由框架解决。页面创建时，自动将页面路由加入 pages.json 文件中。页面的跳转使用  123uni.navigateTo(&amp;#123;    url: &apos;test?id=1&amp;amp;name=uniapp&apos;&amp;#125;);  生命周期改动相对于 vue 的实例生命周期，uni-app 对程序应用层面和页面层面增加对应的生命周期 12">
 
 
 
@@ -169,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/移动端/uni-app框架了解/">
 
 
 
 
 
-  <title>前端技术研究所</title>
+  <title>uni-app框架了解 | 前端技术研究所</title>
   
 
 
@@ -204,8 +206,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -330,9 +331,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -362,9 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/移动端/uni-app框架了解/" itemprop="url">uni-app框架了解</a></h1>
+          <h1 class="post-title" itemprop="name headline">uni-app框架了解</h1>
         
 
         <div class="post-meta">
@@ -424,11 +423,26 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/移动端/uni-app框架了解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/移动端/uni-app框架了解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">已阅读</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span><i> 次</i>
+            </span>
           
 
           
@@ -479,8 +493,7 @@
       
 
       
-        
-          <p>[TOC]</p>
+        <p>[TOC]</p>
 <h3 id="与-vue-的区别"><a href="#与-vue-的区别" class="headerlink" title="与 vue 的区别"></a>与 vue 的区别</h3><h4 id="不需要引入Vue-router"><a href="#不需要引入Vue-router" class="headerlink" title="不需要引入Vue-router"></a>不需要引入Vue-router</h4><p>由框架解决。页面创建时，自动将页面路由加入 <code>pages.json</code> 文件中。页面的跳转使用 </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uni.navigateTo(&#123;</span><br><span class="line">    url: <span class="string">'test?id=1&amp;name=uniapp'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -558,14 +571,68 @@
 <p>在 manifest.json 中需要开启新编译器，即自定义组件模式”usingComponents”:true</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// #ifdef APP-PLUS</span></span><br><span class="line"><span class="comment">// 监听设备网络状态变化事件</span></span><br><span class="line">plus.globalEvent.addEventListener(<span class="string">'netchange'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"><span class="comment">// #endif</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/移动端/uni-app框架了解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+
+<a id="more"></a>
+
+<hr>
+<h3 id="HTML元素和组件"><a href="#HTML元素和组件" class="headerlink" title="HTML元素和组件"></a>HTML元素和组件</h3><h4 id="一些标签的变更"><a href="#一些标签的变更" class="headerlink" title="一些标签的变更"></a>一些标签的变更</h4><p><code>page</code> 相当于 <code>body</code>， <code>view</code>相当于 <code>div</code></p>
+<h4 id="特定组件（高度不可修改）"><a href="#特定组件（高度不可修改）" class="headerlink" title="特定组件（高度不可修改）"></a>特定组件（高度不可修改）</h4><ul>
+<li>NavigationBar，导航栏， 44px高度（H5）</li>
+<li>TabBar，底部选项卡， 50px</li>
+</ul>
+<h4 id="容器标签-Template-和-block"><a href="#容器标签-Template-和-block" class="headerlink" title="容器标签 Template 和 block"></a>容器标签 Template 和 block</h4><p>前者用于条件渲染，后者用于列表渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span>&gt;</span>test 为 true 时显示<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">block</span> <span class="attr">v-for</span>=<span class="string">"(item,index) in list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;item&#125;&#125; - &#123;&#123;index&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="H5-平台不支持小程序组件"><a href="#H5-平台不支持小程序组件" class="headerlink" title="H5 平台不支持小程序组件"></a>H5 平台不支持小程序组件</h4><p>若要使用各个小程序平台的自定义组件，就在项目根目录下分别创建对应目录</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 小程序组件要放在项目特殊文件夹</span></span><br><span class="line">wxcomponents（或 mycomponents、swancomponents）</span><br><span class="line"></span><br><span class="line"><span class="comment">// wxcomponents文件目录，HBuilder 创建的放在根目录。vue-cli 创建的放在 src 目录</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Vue-组件使用"><a href="#Vue-组件使用" class="headerlink" title="Vue 组件使用"></a>Vue 组件使用</h4><p>三步骤：导入，注册和使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;uni-rate value=&quot;2&quot;&gt;&lt;/uni-rate&gt; &lt;!-- 第三步，使用组件。并传值点亮2颗星 --&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import uniRate from &quot;@/components/uni-rate/uni-rate.vue&quot; //第一步，导入组件</span><br><span class="line">  export default &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      uniRate //第二步，注册组件</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>全局组件的使用，在 main.js 中注册</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  main.js 里进行全局导入和注册</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> pageHead <span class="keyword">from</span> <span class="string">'./components/page-head.vue'</span></span><br><span class="line">Vue.component(<span class="string">'page-head'</span>,pageHead)</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.vue 里直接使用组件</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line"> 	 &lt;page-head&gt;<span class="xml"><span class="tag">&lt;/<span class="name">page-head</span>&gt;</span></span></span><br><span class="line">	&lt;<span class="regexp">/view&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="页面样式与布局"><a href="#页面样式与布局" class="headerlink" title="页面样式与布局"></a>页面样式与布局</h3><blockquote>
+<p>因为是跨端，所以推荐完全使用 flex 布局系统</p>
+</blockquote>
+<h4 id="页面尺寸单位使用-rpx"><a href="#页面尺寸单位使用-rpx" class="headerlink" title="页面尺寸单位使用 rpx"></a>页面尺寸单位使用 rpx</h4><p>基准是 750 px，跟小程序的实现一致。</p>
+<p>也可以使用 px，这样就不会随着设备变化</p>
+<h4 id="样式的处理"><a href="#样式的处理" class="headerlink" title="样式的处理"></a>样式的处理</h4><p>样式导入 <code>@import</code> 需要使用相对路径，用 <code>;</code> 表示语句结束</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    @import "../../common/uni.css";</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>避免 style 属性动态渲染，影响性能，如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">:style</span>=<span class="string">"&#123;color:color&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="三个CSS全局变量"><a href="#三个CSS全局变量" class="headerlink" title="三个CSS全局变量"></a>三个CSS全局变量</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span>(<span class="selector-tag">--status-bar-height</span>) 系统状态栏高度</span><br><span class="line"><span class="selector-tag">var</span>(<span class="selector-tag">--window-top</span>) 内容距离顶部距离</span><br><span class="line"><span class="selector-tag">var</span>(<span class="selector-tag">--window-bottom</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="图片和icon处理"><a href="#图片和icon处理" class="headerlink" title="图片和icon处理"></a>图片和icon处理</h3><h4 id="类似-url-file-loader-的处理"><a href="#类似-url-file-loader-的处理" class="headerlink" title="类似 url(file)-loader 的处理"></a>类似 url(file)-loader 的处理</h4><ul>
+<li>图片小于 40kb， 转为 base64</li>
+<li>大于等于 40kb， 要手动转为 base64 ，挪到服务器上用URL引入</li>
+<li>本地图片仅支持 <code>~@</code>语法，绝对路径</li>
+<li>网络路径必须加 https（特别是阿里巴巴矢量图库，默认是没有协议头）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test2</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'~@/static/logo.png'</span>);</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'https://at.alicdn.com/t/font_865816_17gjspmmrkti.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>也是支持 Npm 管理的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 npm 初始化项目</span></span><br><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 安装依赖 </span></span><br><span class="line">npm i --save xxx</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3 两种方式引入依赖</span></span><br><span class="line"><span class="keyword">import</span> package <span class="keyword">from</span> <span class="string">'packageName'</span></span><br><span class="line"><span class="keyword">const</span> package = <span class="built_in">require</span>(<span class="string">'packageName'</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="业务处理"><a href="#业务处理" class="headerlink" title="业务处理"></a>业务处理</h3><h4 id="获取上页面回传参数"><a href="#获取上页面回传参数" class="headerlink" title="获取上页面回传参数"></a>获取上页面回传参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onLoad(e)&#123;&#125; <span class="comment">//  可以打印这个 e 看下内容</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置全局数据和方法——内置了Vuex"><a href="#设置全局数据和方法——内置了Vuex" class="headerlink" title="设置全局数据和方法——内置了Vuex"></a>设置全局数据和方法——内置了Vuex</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//store.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: &#123;...&#125;,</span><br><span class="line">    mutations: &#123;...&#125;,</span><br><span class="line">    actions: &#123;...&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line">Vue.prototype.$store = store</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    store,...</span><br><span class="line">&#125;)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.vue 使用时：</span></span><br><span class="line"><span class="keyword">import</span> &#123;mapState,mapMutations&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="onError-错误捕获回调"><a href="#onError-错误捕获回调" class="headerlink" title="onError 错误捕获回调"></a>onError 错误捕获回调</h4><blockquote>
+<p>因为这不是严格的生命周期，但是可以在根组件下添加 <code>onError</code> 的回调函数</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">   <span class="comment">// 只有 app 才会有 onLaunch 的生命周期</span></span><br><span class="line">   onLaunch () &#123;</span><br><span class="line">       <span class="comment">// ...</span></span><br><span class="line">   &#125;,</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 捕获 app error</span></span><br><span class="line">   onError (err) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(err)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件属性设置不生效"><a href="#组件属性设置不生效" class="headerlink" title="组件属性设置不生效"></a>组件属性设置不生效</h4><blockquote>
+<p>记录组件内部变化的值，在设置新值之前先设置为记录的当前值</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      scrollTop: <span class="number">0</span>,</span><br><span class="line">      old: &#123;</span><br><span class="line">        scrollTop: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 保存原有旧数据</span></span><br><span class="line">    scroll: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.old.scrollTop = e.detail.scrollTop</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 回到 0</span></span><br><span class="line">    goTop: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.scrollTop = <span class="keyword">this</span>.old.scrollTop</span><br><span class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.scrollTop = <span class="number">0</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -575,255 +642,76 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/path/to/error_wepay.png" alt="ErrorJE 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/path/to/error_alipay.jpg" alt="ErrorJE 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/工具使用/hexo主题使用细节/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ErrorJE">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/errorje.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端技术研究所">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/工具使用/hexo主题使用细节/" itemprop="url">hexo主题使用细节</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T22:41:50+08:00">
-                2019-08-07
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-08T12:09:08+08:00">
-                2019-08-08
-              </time>
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具使用/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/uni-app/" rel="tag"># uni-app</a>
           
-
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
           
-            
+            <a href="/tags/跨端/" rel="tag"># 跨端</a>
           
-
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>Hexo 文档实际上还是不够详细。这里列出一些调整的经验和细节。</p>
-<p>除了官方文档，推荐阅读一个关于 Next 主题总结比较好的博客 </p>
-<p><a href="https://hexo-guide.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">https://hexo-guide.readthedocs.io/zh_CN/latest/index.html</a></p>
-<p><a href="https://www.jianshu.com/p/efbeddc5eb19" target="_blank" rel="noopener">https://www.jianshu.com/p/efbeddc5eb19</a></p>
-<h2 id="布局样式"><a href="#布局样式" class="headerlink" title="布局样式"></a>布局样式</h2><h3 id="设置首页文章展示数量"><a href="#设置首页文章展示数量" class="headerlink" title="设置首页文章展示数量"></a>设置首页文章展示数量</h3><p>在站点的配置文件中设置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">index_generator:</span><br><span class="line">  path: <span class="string">''</span></span><br><span class="line">  per_page: <span class="number">1</span></span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
-
-<p>标签/分类也是同理</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">archive_generator:</span><br><span class="line">  per_page: <span class="number">20</span></span><br><span class="line">  yearly: <span class="literal">true</span></span><br><span class="line">  monthly: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">tag_generator:</span><br><span class="line">  per_page: <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="设置首页文章阅读全文"><a href="#设置首页文章阅读全文" class="headerlink" title="设置首页文章阅读全文"></a>设置首页文章阅读全文</h3><p>有三种方式，但是注意不能同时使用，可能出现设置无效的情况</p>
-<h4 id="文章内容中插入标记表示截断"><a href="#文章内容中插入标记表示截断" class="headerlink" title="文章内容中插入标记表示截断"></a>文章内容中插入标记表示截断</h4><blockquote>
-<p>推荐的方式</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="文章头部信息中配置描述"><a href="#文章头部信息中配置描述" class="headerlink" title="文章头部信息中配置描述"></a>文章头部信息中配置描述</h4><blockquote>
-<p>大概能显示几段内容</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">front-matter:description</span><br></pre></td></tr></table></figure>
-
-<h4 id="自动形成摘要，配置主题文件"><a href="#自动形成摘要，配置主题文件" class="headerlink" title="自动形成摘要，配置主题文件"></a>自动形成摘要，配置主题文件</h4><blockquote>
-<p>限定了内容字数，如果字数特别少的话，需要配首页文章显示数量以达到比较好的效果。</p>
-<p>如果使用 md 语法，则会解析成字符串，所以不推荐这种方式</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  length: <span class="number">150</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="设置更新时间"><a href="#设置更新时间" class="headerlink" title="设置更新时间"></a>设置更新时间</h3><p>需要去主题配置文件中开启更新日期记录</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">post_meta:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  created_at: <span class="literal">true</span></span><br><span class="line">  updated_at: <span class="literal">true</span></span><br><span class="line">  categories: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>另外时间的格式没有要求</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2018</span><span class="number">-09</span><span class="number">-08</span> 和 <span class="number">2018</span>年<span class="number">9</span>月<span class="number">8</span>日 效果是一样的</span><br></pre></td></tr></table></figure>
-
-<h3 id="主页文章增加边框阴影"><a href="#主页文章增加边框阴影" class="headerlink" title="主页文章增加边框阴影"></a>主页文章增加边框阴影</h3><blockquote>
-<p>打开 <code>themes/next/source/css/_custom/custom.styl</code> ,向里面加代码:</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"><span class="selector-class">.post</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">25px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(202, 203, 203, .5);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(202, 203, 204, .5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="页面加载条和文章阅读进度"><a href="#页面加载条和文章阅读进度" class="headerlink" title="页面加载条和文章阅读进度"></a>页面加载条和文章阅读进度</h3><p>修改主题配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scrollpercent: true # 文章进度</span><br><span class="line">pace: true # 加载条</span><br><span class="line">pace_theme: pace-theme-flash # 加载条主题</span><br></pre></td></tr></table></figure>
-
-<h3 id="文字数量统计和阅读时间估算"><a href="#文字数量统计和阅读时间估算" class="headerlink" title="文字数量统计和阅读时间估算"></a>文字数量统计和阅读时间估算</h3><p>博客根目录下安装插件</p>
-<p><code>npm i --save hexo-wordcount</code></p>
-<p>再配置主题文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  # 字数统计</span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  # 预览时间</span><br><span class="line">  min2read: <span class="literal">true</span></span><br><span class="line">  # 总字数，显示页面底部</span><br><span class="line">  totalcount: <span class="literal">true</span></span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改文章访问-URL"><a href="#修改文章访问-URL" class="headerlink" title="修改文章访问 URL"></a>修改文章访问 URL</h3><p>配置站点文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: :category/:title/</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/工具使用/hexo主题使用细节/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/工具使用/hexo主题使用细节/" rel="next" title="hexo主题使用细节">
+                <i class="fa fa-chevron-left"></i> hexo主题使用细节
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -833,14 +721,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -848,6 +733,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -868,8 +764,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -941,6 +846,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#与-vue-的区别"><span class="nav-number">1.</span> <span class="nav-text">与 vue 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不需要引入Vue-router"><span class="nav-number">1.1.</span> <span class="nav-text">不需要引入Vue-router</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期改动"><span class="nav-number">1.2.</span> <span class="nav-text">生命周期改动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.3.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨平台框架限制"><span class="nav-number">1.4.</span> <span class="nav-text">跨平台框架限制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#data-属性"><span class="nav-number">1.4.1.</span> <span class="nav-text">data 属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#全局变量"><span class="nav-number">1.4.2.</span> <span class="nav-text">全局变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class-和-style-动态绑定语法"><span class="nav-number">1.5.</span> <span class="nav-text">class 和 style 动态绑定语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-for-索引和-key"><span class="nav-number">1.6.</span> <span class="nav-text">v-for 索引和 key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件处理器"><span class="nav-number">1.7.</span> <span class="nav-text">事件处理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单组件替换"><span class="nav-number">1.8.</span> <span class="nav-text">表单组件替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非H5端不支持列表"><span class="nav-number">1.9.</span> <span class="nav-text">非H5端不支持列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各平台的条件编译"><span class="nav-number">1.10.</span> <span class="nav-text">各平台的条件编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#H5-的事件定义扩展"><span class="nav-number">1.11.</span> <span class="nav-text">H5 的事件定义扩展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML元素和组件"><span class="nav-number">2.</span> <span class="nav-text">HTML元素和组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一些标签的变更"><span class="nav-number">2.1.</span> <span class="nav-text">一些标签的变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特定组件（高度不可修改）"><span class="nav-number">2.2.</span> <span class="nav-text">特定组件（高度不可修改）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器标签-Template-和-block"><span class="nav-number">2.3.</span> <span class="nav-text">容器标签 Template 和 block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#H5-平台不支持小程序组件"><span class="nav-number">2.4.</span> <span class="nav-text">H5 平台不支持小程序组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue-组件使用"><span class="nav-number">2.5.</span> <span class="nav-text">Vue 组件使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面样式与布局"><span class="nav-number">3.</span> <span class="nav-text">页面样式与布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面尺寸单位使用-rpx"><span class="nav-number">3.1.</span> <span class="nav-text">页面尺寸单位使用 rpx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样式的处理"><span class="nav-number">3.2.</span> <span class="nav-text">样式的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三个CSS全局变量"><span class="nav-number">3.3.</span> <span class="nav-text">三个CSS全局变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片和icon处理"><span class="nav-number">4.</span> <span class="nav-text">图片和icon处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类似-url-file-loader-的处理"><span class="nav-number">4.1.</span> <span class="nav-text">类似 url(file)-loader 的处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖管理"><span class="nav-number">5.</span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务处理"><span class="nav-number">6.</span> <span class="nav-text">业务处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取上页面回传参数"><span class="nav-number">6.1.</span> <span class="nav-text">获取上页面回传参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置全局数据和方法——内置了Vuex"><span class="nav-number">6.2.</span> <span class="nav-text">设置全局数据和方法——内置了Vuex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onError-错误捕获回调"><span class="nav-number">6.3.</span> <span class="nav-text">onError 错误捕获回调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件属性设置不生效"><span class="nav-number">6.4.</span> <span class="nav-text">组件属性设置不生效</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1109,6 +1030,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1160,6 +1085,30 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'ErrorJe',
+            repo: 'ErrorJE.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '83278e1b95e23002e8e3911178c6f09f6b30d1a1',
+            
+                client_id: '7899390d88d21ead4a2d'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
