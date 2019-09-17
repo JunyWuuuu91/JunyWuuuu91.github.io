@@ -345,6 +345,272 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/移动端/uni-app框架了解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ErrorJE">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/errorje.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端技术研究所">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/移动端/uni-app框架了解/" itemprop="url">uni-app框架了解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T16:26:14+08:00">
+                2019-08-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-12T16:32:21+08:00">
+                2019-08-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>[TOC]</p>
+<h3 id="与-vue-的区别"><a href="#与-vue-的区别" class="headerlink" title="与 vue 的区别"></a>与 vue 的区别</h3><h4 id="不需要引入Vue-router"><a href="#不需要引入Vue-router" class="headerlink" title="不需要引入Vue-router"></a>不需要引入Vue-router</h4><p>由框架解决。页面创建时，自动将页面路由加入 <code>pages.json</code> 文件中。页面的跳转使用 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uni.navigateTo(&#123;</span><br><span class="line">    url: <span class="string">'test?id=1&amp;name=uniapp'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="生命周期改动"><a href="#生命周期改动" class="headerlink" title="生命周期改动"></a>生命周期改动</h4><p>相对于 vue 的实例生命周期，uni-app 对程序<code>应用层面</code>和<code>页面层面</code>增加对应的生命周期</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">onReady 取代 mounted</span><br><span class="line">onLoad 取代 created</span><br></pre></td></tr></table></figure>
+
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>注意不要在回调上或框架选项属性如 <code>created</code>上使用箭头函数，因为 this 绑定的不是 vue ，是未定义的。</p>
+<h4 id="跨平台框架限制"><a href="#跨平台框架限制" class="headerlink" title="跨平台框架限制"></a>跨平台框架限制</h4><p>H5的vue语法得到全部支持，App 和小程序有功能限制。</p>
+<h5 id="data-属性"><a href="#data-属性" class="headerlink" title="data 属性"></a>data 属性</h5><p>使用函数返回 return 对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		title:<span class="string">'xx'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><p>有四种方式提供实现 vue 的全局变量</p>
+<ul>
+<li>1 公用模块：缺点是每次都需要引入</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// common/helper.js 定义公共方法</span></span><br><span class="line"><span class="keyword">const</span> websiteUrl = <span class="string">'http://uniapp.dcloud.io'</span>; </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span><br><span class="line">  websiteUrl,  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="comment">// pages/index/index.vue 引用模块</span></span><br><span class="line"><span class="keyword">import</span> helper <span class="keyword">from</span> <span class="string">'../../common/helper.js'</span>;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span><br><span class="line">  data() &#123;  </span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;  </span><br><span class="line">  &#125;,  </span><br><span class="line">  onLoad()&#123;  </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'now:'</span> + helper.now());  </span><br><span class="line">  &#125;,  </span><br><span class="line">  methods: &#123;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2 挂载 Vue.prototype：扩展Vue 的原型<ul>
+<li>建议统一加前缀。这样可以与当前页面区分开</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line">Vue.prototype.websiteUrl = <span class="string">'http://uniapp.dcloud.io'</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">&lt;script&gt;  </span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span><br><span class="line">        onLoad()&#123;  </span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'now:'</span> + <span class="keyword">this</span>.websiteUrl);  </span><br><span class="line">        &#125;,  </span><br><span class="line">    &#125;  </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3 gloablData 这是小程序的实现方式<ul>
+<li>在 App 上声明全局变量，但是在 Vue 中是没有的。可以在 App.vue 的 <code>globalData</code>属性上读写这个值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.vue</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span><br><span class="line">  globalData: &#123;  </span><br><span class="line">    text: <span class="string">'text'</span>  </span><br><span class="line">  &#125;,  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 读写方式：可以在页面的 onShow 钩子中进行变量赋值</span></span><br><span class="line">getApp().globalData.text = <span class="string">'test'</span> <span class="comment">// 赋值</span></span><br><span class="line"><span class="built_in">console</span>.log(getApp().globalData.text) <span class="comment">// 'test' 读值</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>4 Vuex 状态管理模式，集中式存储所有组件状态。需要自己学习</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 创建 store 目录和 store.js</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;  </span><br><span class="line">  state: &#123;  </span><br><span class="line">    login: <span class="literal">false</span>,  </span><br><span class="line">    token: <span class="string">''</span>,  </span><br><span class="line">    avatarUrl: <span class="string">''</span>,  </span><br><span class="line">    userName: <span class="string">''</span>  </span><br><span class="line">  &#125;,  </span><br><span class="line">  mutations: &#123;  </span><br><span class="line">    login(state, provider) &#123;  </span><br><span class="line">      <span class="built_in">console</span>.log(state)  </span><br><span class="line">      <span class="built_in">console</span>.log(provider)  </span><br><span class="line">      state.login = <span class="literal">true</span>;  </span><br><span class="line">      state.token = provider.token;  </span><br><span class="line">      state.userName = provider.userName;  </span><br><span class="line">      state.avatarUrl = provider.avatarUrl;  </span><br><span class="line">    &#125;,  </span><br><span class="line">    logout(state) &#123;  </span><br><span class="line">      state.login = <span class="literal">false</span>;  </span><br><span class="line">      state.token = <span class="string">''</span>;  </span><br><span class="line">      state.userName = <span class="string">''</span>;  </span><br><span class="line">      state.avatarUrl = <span class="string">''</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 main.js 挂载 Vuex</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span>  </span><br><span class="line">Vue.prototype.$store = store  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 3 pages/index/index.vue 使用</span></span><br><span class="line"><span class="keyword">import</span> &#123;  </span><br><span class="line">  mapState,  </span><br><span class="line">  mapMutations  </span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'vuex'</span>;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span><br><span class="line">  computed: &#123;  </span><br><span class="line">    ...mapState([<span class="string">'avatarUrl'</span>, <span class="string">'login'</span>, <span class="string">'userName'</span>])  </span><br><span class="line">  &#125;,  </span><br><span class="line">  methods: &#123;  </span><br><span class="line">    ...mapMutations([<span class="string">'logout'</span>])  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="class-和-style-动态绑定语法"><a href="#class-和-style-动态绑定语法" class="headerlink" title="class 和 style 动态绑定语法"></a>class 和 style 动态绑定语法</h4><blockquote>
+<p><a href="https://cn.vuejs.org/v2/guide/class-and-style.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/class-and-style.html</a></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"static"</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;</span>222<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"static"</span> <span class="attr">:class</span>=<span class="string">"[activeClass, errorClass]"</span>&gt;</span>333<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"static"</span> <span class="attr">v-bind:class</span>=<span class="string">"[isActive ? activeClass : '', errorClass]"</span>&gt;</span>444<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"static"</span> <span class="attr">v-bind:class</span>=<span class="string">"[&#123; active: isActive &#125;, errorClass]"</span>&gt;</span>555<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;</span>666<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">v-bind:style</span>=<span class="string">"[&#123; color: activeColor, fontSize: fontSize + 'px' &#125;]"</span>&gt;</span>777<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="v-for-索引和-key"><a href="#v-for-索引和-key" class="headerlink" title="v-for 索引和 key"></a>v-for 索引和 key</h4><p>h5 模式从1 开始，其他平台从0开始。</p>
+<p>key 最好是唯一标识，如果不写可以选择忽略警告。</p>
+<h4 id="事件处理器"><a href="#事件处理器" class="headerlink" title="事件处理器"></a>事件处理器</h4><blockquote>
+<p>支持全 Vue 事件， 绑定事件用 <code>@</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件映射表，左侧为 WEB 事件，右侧为 ``uni-app`` 对应事件</span></span><br><span class="line">&#123;</span><br><span class="line">    click: <span class="string">'tap'</span>,</span><br><span class="line">    touchstart: <span class="string">'touchstart'</span>,</span><br><span class="line">    touchmove: <span class="string">'touchmove'</span>,</span><br><span class="line">    touchcancel: <span class="string">'touchcancel'</span>,</span><br><span class="line">    touchend: <span class="string">'touchend'</span>,</span><br><span class="line">    tap: <span class="string">'tap'</span>,</span><br><span class="line">    longtap: <span class="string">'longtap'</span>,</span><br><span class="line">    input: <span class="string">'input'</span>,</span><br><span class="line">    change: <span class="string">'change'</span>,</span><br><span class="line">    submit: <span class="string">'submit'</span>,</span><br><span class="line">    blur: <span class="string">'blur'</span>,</span><br><span class="line">    focus: <span class="string">'focus'</span>,</span><br><span class="line">    reset: <span class="string">'reset'</span>,</span><br><span class="line">    confirm: <span class="string">'confirm'</span>,</span><br><span class="line">    columnchange: <span class="string">'columnchange'</span>,</span><br><span class="line">    linechange: <span class="string">'linechange'</span>,</span><br><span class="line">    error: <span class="string">'error'</span>,</span><br><span class="line">    scrolltoupper: <span class="string">'scrolltoupper'</span>,</span><br><span class="line">    scrolltolower: <span class="string">'scrolltolower'</span>,</span><br><span class="line">    scroll: <span class="string">'scroll'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件修饰符</span></span><br><span class="line">.stop：全平台支持。组织事件冒泡</span><br><span class="line">.prevent</span><br><span class="line">.self</span><br><span class="line">.once</span><br><span class="line">.capture</span><br><span class="line">.passive</span><br></pre></td></tr></table></figure>
+
+<h4 id="表单组件替换"><a href="#表单组件替换" class="headerlink" title="表单组件替换"></a>表单组件替换</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select -&gt; picker</span><br><span class="line">radio -&gt; radio-group</span><br></pre></td></tr></table></figure>
+
+<h4 id="非H5端不支持列表"><a href="#非H5端不支持列表" class="headerlink" title="非H5端不支持列表"></a>非H5端不支持列表</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Slot（scoped 暂时还没做支持）</span><br><span class="line">动态组件</span><br><span class="line">异步组件</span><br><span class="line">inline-template</span><br><span class="line">X-Templates</span><br><span class="line">keep-alive</span><br><span class="line">transition （可使用 animation 或 CSS 动画替代）</span><br></pre></td></tr></table></figure>
+
+<h4 id="各平台的条件编译"><a href="#各平台的条件编译" class="headerlink" title="各平台的条件编译"></a>各平台的条件编译</h4><blockquote>
+<p>具体取值看文档</p>
+</blockquote>
+<ul>
+<li>5+APP 平台</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#ifdef APP-PLUS</span><br><span class="line"><span class="keyword">var</span> appid = plus.runtime.appid;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'应用的 appid 为：'</span> + appid);</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>除了H5 和 微信小程序平台</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#ifndef H5 || MP-WEIXIN</span><br><span class="line">需条件编译的代码</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>static 静态目录的处理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">各个平台标识值的小写作为目录，将资源放置其下作为各个平台对应编译获取的静态资源目录</span><br><span class="line">若是直接写在 static 目录下的资源，则是全平台可使用</span><br></pre></td></tr></table></figure>
+
+<h4 id="H5-的事件定义扩展"><a href="#H5-的事件定义扩展" class="headerlink" title="H5 的事件定义扩展"></a>H5 的事件定义扩展</h4><blockquote>
+<p>uniapp 没有 <code>document</code>，使用 <code>plus.globalEvent.addEventListener</code></p>
+<p>在 manifest.json 中需要开启新编译器，即自定义组件模式”usingComponents”:true</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// #ifdef APP-PLUS</span></span><br><span class="line"><span class="comment">// 监听设备网络状态变化事件</span></span><br><span class="line">plus.globalEvent.addEventListener(<span class="string">'netchange'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"><span class="comment">// #endif</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/移动端/uni-app框架了解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/工具使用/hexo主题使用细节/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -568,200 +834,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/前端模块化/requirejs 配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ErrorJE">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/errorje.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端技术研究所">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/前端模块化/requirejs 配置/" itemprop="url">RequireJS 基本配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T17:52:43+08:00">
-                2019-08-05
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-08T10:55:20+08:00">
-                2019-08-08
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端模块化/" itemprop="url" rel="index">
-                    <span itemprop="name">前端模块化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  492
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="AMD-require-配置函数"><a href="#AMD-require-配置函数" class="headerlink" title="AMD - require 配置函数"></a>AMD - require 配置函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  AMD - require 配置函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">  <span class="comment">// 公共路径</span></span><br><span class="line">  baseUrl: <span class="string">'/xxx/xxx'</span>,</span><br><span class="line">  <span class="comment">// 插件库的映射字典</span></span><br><span class="line">  paths: &#123;</span><br><span class="line">    <span class="string">'jQuery'</span>: [ <span class="comment">// 每个插件或库的路径，使用的时候可以直接使用其key的部分来代替路径引入</span></span><br><span class="line">      <span class="string">'cnd:/xxxxx'</span>, <span class="comment">// 数组形式value值，第一个无法加载时，执行第二个</span></span><br><span class="line">      <span class="string">'lib/xx/xxx'</span> <span class="comment">// 可以省略 js 后缀</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/*解决非AMD规范的js时， 解决其载入顺序</span></span><br><span class="line"><span class="comment">    有很多的插件和库并不是完全符合模块化规范</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  shim: &#123;</span><br><span class="line">    <span class="string">'easyui'</span>: &#123;</span><br><span class="line">        <span class="comment">// 表明还需要依赖哪些模块</span></span><br><span class="line">        deps: [</span><br><span class="line">            <span class="string">'jquery'</span>,</span><br><span class="line">            <span class="comment">// 对CSS路径的引用 css!</span></span><br><span class="line">            <span class="string">'css!lib/easyui-1.5.1/themes/metro-blue-ext/easyui.css'</span>,</span><br><span class="line">            <span class="string">'css!lib/easyui-1.5.1/themes/icon.css'</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="comment">// 输出的变量名</span></span><br><span class="line">        exports: <span class="string">'jQuery'</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 对不同文件前缀给不同的模块</span></span><br><span class="line">  map: &#123;</span><br><span class="line">    <span class="comment">// 在some模块使用 foo 的时候，会使用不同的版本</span></span><br><span class="line">    <span class="string">'some1'</span>: &#123;</span><br><span class="line">      <span class="string">'foo'</span>: <span class="string">'foov1'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'some2'</span>: &#123;</span><br><span class="line">      <span class="string">'foo'</span>: <span class="string">'foov2'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 对所有模块都使用这个版本</span></span><br><span class="line">    <span class="string">'*'</span>: &#123;</span><br><span class="line">      <span class="string">'css'</span>: <span class="string">'lib/require-css/0.1.8/css.min'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 其他情况下需要用到变量和方法的</span></span><br><span class="line"></span><br><span class="line">  config: &#123;</span><br><span class="line">    <span class="comment">// 这里的bar实际上是模块的名字，xxxx/bar.js</span></span><br><span class="line">    <span class="string">'bar'</span>: &#123;</span><br><span class="line">      size: <span class="string">'large'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 对应的调用方式， 在对应模块下， 这里 bar.js</span></span><br><span class="line"><span class="comment">      define(function (require, exports, module) &#123;</span></span><br><span class="line"><span class="comment">        var size = module.config().size</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">      第二种方式</span></span><br><span class="line"><span class="comment">      define(['module'], function (module) &#123;</span></span><br><span class="line"><span class="comment">        var size = module.config().size</span></span><br><span class="line"><span class="comment">      &#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/前端模块化/requirejs 配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -809,7 +886,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -820,7 +897,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -894,7 +971,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.2k</span>
+    <span title="Site words total count">19.9k</span>
   
 </div>
 
